@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Daily Rafi - Newspaper</title>
+    <style>
+      body {
+        font-family: "Times New Roman", serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 5px solid #ff0000;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 3em;
+      }
+      .header p {
+        margin: 5px 0;
+        font-size: 1.2em;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .headline {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #ff0000;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .article {
+        border: 1px solid #ddd;
+        padding: 15px;
+        background: #fafafa;
+      }
+      .article h2 {
+        color: #333;
+        margin-top: 0;
+      }
+      .article img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .article p {
+        line-height: 1.6;
+      }
+      .read-more {
+        color: #007bff;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: #333;
+        color: white;
+        margin-top: 20px;
+      }
+      @media (max-width: 768px) {
+        .articles {
+          grid-template-columns: 1fr;
+        }
+        .header h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>The Daily Rafi</h1>
+      <p>Breaking News | Your Source for Truth | [Today's Date]</p>
+    </div>
+    <div class="container">
+      <h1 class="headline">Top Stories</h1>
+      <div class="articles">
+        <div class="article">
+          <img
+            src="https://via.placeholder.com/400x200?text=News+Image+1"
+            alt="News Image"
+          />
+          <h2>Global Climate Summit Reaches Historic Agreement</h2>
+          <p>
+            Leaders from around the world have agreed on new measures to combat
+            climate change. The summit, held in Geneva, promises to reduce
+            emissions by 50% by 2030.
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+          </p>
+          <p class="extra-text" style="display: none">
+            Experts say this could be a turning point, but implementation
+            remains a challenge. Activists are calling for immediate action.
+          </p>
+        </div>
+        <div class="article">
+          <img
+            src="https://via.placeholder.com/400x200?text=News+Image+2"
+            alt="News Image"
+          />
+          <h2>Tech Giant Unveils Revolutionary AI</h2>
+          <p>
+            A major tech company has launched an AI system capable of real-time
+            language translation. This breakthrough could change how we
+            communicate globally.
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+          </p>
+          <p class="extra-text" style="display: none">
+            The AI, named RafiAI, supports over 100 languages and is free for
+            basic use. Privacy concerns have been raised by critics.
+          </p>
+        </div>
+        <div class="article">
+          <img
+            src="https://via.placeholder.com/400x200?text=News+Image+3"
+            alt="News Image"
+          />
+          <h2>Sports Championship Ends in Surprise Upset</h2>
+          <p>
+            The underdog team won the national championship in a thrilling final
+            match. Fans celebrated late into the night.
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+          </p>
+          <p class="extra-text" style="display: none">
+            The victory marks a new era for the sport, with increased funding
+            expected for grassroots programs.
+          </p>
+        </div>
+        <div class="article">
+          <img
+            src="https://via.placeholder.com/400x200?text=News+Image+4"
+            alt="News Image"
+          />
+          <h2>Economic Boom Predicted for Next Year</h2>
+          <p>
+            Analysts forecast strong growth in the global economy, driven by
+            innovation and recovery efforts.
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+          </p>
+          <p class="extra-text" style="display: none">
+            However, inflation and supply chain issues could pose risks.
+            Investors are advised to diversify.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        &copy; 2024 The Daily Rafi. All rights reserved. | Contact:rafipt882
+        @gmail.com
+      </p>
+    </div>
+    <script>
+      function toggleText(element) {
+        const extraText = element.parentElement.querySelector(".extra-text");
+        if (extraText.style.display === "none") {
+          extraText.style.display = "block";
+          element.textContent = "Read Less";
+        } else {
+          extraText.style.display = "none";
+          element.textContent = "Read More";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  background-color: #fff0f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  color: #662222;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+canvas {
+  border: 2px solid #662222;
+  background-color: #ffeaea;
+  display: block;
+  margin: 10px auto;
+}
+
+a {
+  color: #aa4444;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

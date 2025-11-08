@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake and Deer Animation</title>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(to top, #a8edea, #fed6e3);
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      .ground {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background: #3e2723;
+      }
+
+      /* Snake shape */
+      .snake {
+        position: absolute;
+        bottom: 100px;
+        left: -150px;
+        width: 150px;
+        height: 40px;
+        background: linear-gradient(90deg, #4caf50, #1b5e20);
+        border-radius: 20px;
+        animation: moveSnake 8s linear infinite;
+      }
+
+      .snake::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        background: #2e7d32;
+        border-radius: 50%;
+      }
+
+      .snake::after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: 18px;
+        width: 8px;
+        height: 4px;
+        background: red;
+        border-radius: 2px;
+      }
+
+      /* Deer shape */
+      .deer {
+        position: absolute;
+        bottom: 100px;
+        right: -200px;
+        width: 100px;
+        height: 70px;
+        background: #8d6e63;
+        border-radius: 50% 50% 40% 40%;
+        animation: moveDeer 10s linear infinite;
+      }
+
+      .deer::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 30px;
+        width: 20px;
+        height: 40px;
+        background: #5d4037;
+        border-radius: 5px;
+        transform: rotate(10deg);
+      }
+
+      .deer::after {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 55px;
+        width: 20px;
+        height: 40px;
+        background: #5d4037;
+        border-radius: 5px;
+        transform: rotate(-10deg);
+      }
+
+      @keyframes moveSnake {
+        0% {
+          left: -150px;
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-10px);
+        }
+        50% {
+          transform: translateY(5px);
+        }
+        75% {
+          transform: translateY(-8px);
+        }
+        100% {
+          left: 110vw;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes moveDeer {
+        0% {
+          right: -200px;
+          transform: translateY(0);
+        }
+        25% {
+          transform: translateY(-5px);
+        }
+        50% {
+          transform: translateY(3px);
+        }
+        75% {
+          transform: translateY(-5px);
+        }
+        100% {
+          right: 110vw;
+          transform: translateY(0);
+        }
+      }
+
+      /* Optional clouds */
+      .cloud {
+        position: absolute;
+        background: white;
+        border-radius: 50px;
+        opacity: 0.8;
+        animation: cloudMove 60s linear infinite;
+      }
+
+      .cloud.one {
+        top: 80px;
+        left: -200px;
+        width: 120px;
+        height: 60px;
+        animation-delay: 0s;
+      }
+
+      .cloud.two {
+        top: 150px;
+        left: -400px;
+        width: 200px;
+        height: 80px;
+        animation-delay: 20s;
+      }
+
+      @keyframes cloudMove {
+        from {
+          left: -300px;
+        }
+        to {
+          left: 120vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🐍 Snake and 🦌 Deer Animation</h1>
+
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+
+    <div class="snake"></div>
+    <div class="deer"></div>
+
+    <div class="ground"></div>
+    <a href="index.html">Back to Hub</a>
+  </body>
+</html>
